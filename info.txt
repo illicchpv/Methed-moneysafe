@@ -24,3 +24,7 @@ https://my.methed.ru/pl/teach/control/lesson/view?id=313655402&editMode=0
       https://github.com/
   видео -- Git 💥 github для начинающих 💥консольные команды git 
     https://www.youtube.com/watch?v=yVR1VsRGsRs&t=1262s
+
+  разбор
+    https://github.com/KingSora/OverlayScrollbars
+  
