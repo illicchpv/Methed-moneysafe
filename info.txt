@@ -11,9 +11,16 @@ https://my.methed.ru/teach/control/stream/view/id/420709845
 ============================================Интенсив - Личный финансовый менеджер (07.11 — 10.11)
 список уроков - https://my.methed.ru/teach/control/stream/view/id/820825566
 
-день 1 Стартуем, взаимодействие с DOM			https://my.methed.ru/pl/teach/control/lesson/view?id=313655402&editMode=0
+день 1
+
+https://my.methed.ru/pl/teach/control/lesson/view?id=313655402&editMode=0
+  видео -- день 1 Стартуем, взаимодействие с DOM			
 
 
-MoneySafe-layout.zip https://fs15.getcourse.ru/fileservice/file/download/a/251231/sc/176/h/edc67b8936c8f2c787df76b30c485942.zip
+    MoneySafe-layout.zip https://fs15.getcourse.ru/fileservice/file/download/a/251231/sc/176/h/edc67b8936c8f2c787df76b30c485942.zip
 
-Выгружаем на github
+  видео -- Выгружаем на github
+    Полезные ссылки
+      https://git-scm.com/
+      https://github.com/
+  видео -- Git 💥 github для начинающих 💥консольные команды git
