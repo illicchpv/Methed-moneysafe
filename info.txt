@@ -41,3 +41,8 @@ https://my.methed.ru/pl/teach/control/lesson/view?id=313655402&editMode=0
   д.з. reportOperationList.textContent = 'загрузка...'
         сделать прелоадер
         вынести утилиты в отдельный js
+
+  разбор https://www.youtube.com/watch?v=u_3KIAoDGow
+    https://gsap.com/
+    https://gsap.com/docs/v3/GSAP/
+    https://gsap.com/docs/v3/Installation

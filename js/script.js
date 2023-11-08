@@ -26,24 +26,59 @@ financeForm.addEventListener('submit', (e) => {
   if(typeOperation === 'expenses'){
     amount -= changeAmount
   }
-  financeAmount.textContent = `${amount.toLocaleString()} ₽`
+  financeAmount.textContent = `${amount.toLocaleString("RU-ru")} ₽`
 })
 
 const closeReport = ({target}) => {
   if(target.closest('.report__close') 
     || (!target.closest('.report') && target !== financeReport)
   ){
-    report.classList.remove('report__open')
+    gsap.to(report, { 
+      opacity: 0, 
+      scale: 0, 
+      duration: 0.5,
+      ease: "power2.in",
+      onComplete: () => {
+        report.computedStyleMap.visibility = 'hidden'
+      }
+    });
+  
+    // report.classList.remove('report__open')
     document.removeEventListener('click', closeReport)
   }
 }
 
 const openReport = () => {
-  report.classList.add('report__open')
+  // report.classList.add('report__open')
+
+  report.style.visibility = 'visible'
+  gsap.to(report, { 
+    opacity: 1, 
+    scale: 1, 
+    duration: 0.5,
+    ease: "power2.out",
+  });
+
   document.addEventListener('click', closeReport)
+
 }
 
 financeReport.addEventListener('click', async () => {
+  /*
+  const t = financeReport.textContent
+  financeReport.textContent = 'загрузка'
+  financeReport.disabled = true
+
+  const data = await getData('test') // finance
+
+  financeReport.textContent = t
+  financeReport.disabled = false
+
+  reportOperationList.textContent = ''
+  reportOperationList.append(...renderReport(data))
+  openReport()
+  */
+
   openReport()
   reportOperationList.innerHTML = '<tr><td colspan="99" align="center" style="padding: 50px; background-color: lightblue;"><div class="loader-104"></div></td></tr>'
 
