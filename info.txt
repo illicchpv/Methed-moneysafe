@@ -10,6 +10,9 @@ https://my.methed.ru/teach/control/stream/view/id/420709845
 
 ============================================Интенсив - Личный финансовый менеджер (07.11 — 10.11)
 список уроков - https://my.methed.ru/teach/control/stream/view/id/820825566
+макет - https://www.figma.com/file/HmLPUW5siiGaOPk3NmQUX7/MoneySafe-(Copy)?type=design&node-id=0-1&mode=design&t=AhL8ow5fzmqv4T80-0
+gitHub - https://github.com/illicchpv/Methed-moneysafe
+gitHub Page - https://illicchpv.github.io/Methed-moneysafe/
 
 день 1
 
@@ -28,3 +31,13 @@ https://my.methed.ru/pl/teach/control/lesson/view?id=313655402&editMode=0
   разбор
     https://github.com/KingSora/OverlayScrollbars
   
+день 2
+  Получаем и отправляем данные на сервер https://my.methed.ru/pl/teach/control/lesson/view?id=313655404&editMode=0
+
+  Api Finance - https://github.com/Quper24/api_finance
+  glitch - https://glitch.com/
+  glitch moneysafe api - https://methed-moneysafe.glitch.me/api/test
+
+  д.з. reportOperationList.textContent = 'загрузка...'
+        сделать прелоадер
+        вынести утилиты в отдельный js
