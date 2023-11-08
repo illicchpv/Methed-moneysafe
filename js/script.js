@@ -99,7 +99,7 @@ const renderReport = (data) => {
 
 financeReport.addEventListener('click', async () => {
   openReport()
-  reportOperationList.innerHTML = 'загрузка...'
+  reportOperationList.innerHTML = '<tr><td colspan="99" align="center" style="padding: 50px; background-color: lightblue;"><div class="loader-104"></div></td></tr>'
 
   const data = await getData('test') // finance
   renderReport(data)
