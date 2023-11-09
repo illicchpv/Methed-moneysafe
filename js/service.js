@@ -2,10 +2,12 @@ const API_URL = 'https://methed-moneysafe2.glitch.me/api/'
 
 export const getData = async (url) => {
   try{
-    const resp = await fetch(API_URL + url)
+    url = API_URL + url
+    console.log('get url: ', url);
+    const resp = await fetch(url)
     // console.log('resp: ', resp);
     if(!resp.ok){
-      throw new Error(`HTTP error ststus: ${resp.status}`)
+      throw new Error(`getData HTTP error ststus: ${resp.status}`)
     }
     return await resp.json()
   }catch(e){
@@ -14,3 +16,22 @@ export const getData = async (url) => {
   }
 }
 
+export const postData = async (url, data) => {
+  try{
+    url = API_URL + url
+    console.log('post url: ', url);
+    const resp = await fetch(url, {
+      method: 'POST',
+      headers: { "Content-Type": 'application/json'},
+      body: JSON.stringify(data),
+    })
+    // console.log('resp: ', resp);
+    if(!resp.ok){
+      throw new Error(`postData HTTP error ststus: ${resp.status}`)
+    }
+    return await resp.json()
+  }catch(e){
+    console.error('postData catch(e): ', (e));
+    throw e
+  }
+}

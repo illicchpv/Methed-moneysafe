@@ -50,6 +50,7 @@ const openReport = () => {
 }
 
 export const renderReport = (data) => {
+  reportOperationList.innerHTML = ''
   const reportRows = data.map((el) => {
     const repRow = document.createElement('tr')
     repRow.classList.add('report__row')
@@ -61,7 +62,7 @@ export const renderReport = (data) => {
 <td class="report__cell">${typesOperation[el.type]}</td>
 <td class="report__action-cell">
   <button
-    class="report__button report__button_table">&#10006;</button>
+    class="report__button report__button_table" data-id="${el.id}">&#10006;</button>
 </td>
 `;
     return repRow
@@ -71,26 +72,17 @@ export const renderReport = (data) => {
 }
 
 export const reportControl = () => {
+
+  reportOperationList.addEventListener('click', ({target}) => {
+    console.log('DZ target: ', target, target.dataset.id);
+  })
   
   financeReport.addEventListener('click', async () => {
-    /*
-    const t = financeReport.textContent
-    financeReport.textContent = 'загрузка'
-    financeReport.disabled = true
-  
-    const data = await getData('test') // finance
-  
-    financeReport.textContent = t
-    financeReport.disabled = false
-  
-    reportOperationList.textContent = ''
-    reportOperationList.append(...renderReport(data))
+    
     openReport()
-    */
-    openReport()
+
     reportOperationList.innerHTML = '<tr><td colspan="99" align="center" style="padding: 50px; background-color: lightblue;"><div class="loader-104"></div></td></tr>'
-  
-    const data = await getData('test') // finance
+    const data = await getData('finance') // finance test
     
     reportOperationList.textContent = ''
     reportOperationList.append(...renderReport(data))
@@ -110,11 +102,13 @@ export const reportControl = () => {
     }
     const queryString = searchParams.toString()
   
-    const url = queryString ? `test?${queryString}` : "test"
-    console.log('url: ', url);
+    const url = queryString ? `finance?${queryString}` : "finance" // `test?${queryString}` : "test"
   
+    reportOperationList.innerHTML = '<tr><td colspan="99" align="center" style="padding: 50px; background-color: lightblue;"><div class="loader-104"></div></td></tr>'
     const data = await getData(url) // finance
-    renderReport(data)
+    
+    reportOperationList.textContent = ''
+    reportOperationList.append(...renderReport(data))
   })
   
   

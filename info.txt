@@ -53,4 +53,9 @@ https://my.methed.ru/pl/teach/control/lesson/view?id=313655402&editMode=0
   Полезные ссылки 
     api finance https://github.com/Quper24/api_finance
 
+  д.з.
+    удалять пункты расходов
+    обновлять сумму после удаления
+    загружать список категорий
+
     
