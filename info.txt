@@ -46,3 +46,11 @@ https://my.methed.ru/pl/teach/control/lesson/view?id=313655402&editMode=0
     https://gsap.com/
     https://gsap.com/docs/v3/GSAP/
     https://gsap.com/docs/v3/Installation
+
+день 3
+  Небольшой урок по адаптиву https://my.methed.ru/pl/teach/control/lesson/view?id=313655406&editMode=0
+
+  Полезные ссылки 
+    api finance https://github.com/Quper24/api_finance
+
+    
