@@ -6,3 +6,9 @@ export const convertStringNumber = (str) => {
   }
   return false
 }
+
+export const reformatDate = (dt) => {
+  const [y, m, d] = dt.split('-')
+  return d.padStart(2, '0') + '.' + m.padStart(2, '0') + '.' + y
+}
+
