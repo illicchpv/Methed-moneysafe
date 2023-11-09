@@ -58,4 +58,6 @@ https://my.methed.ru/pl/teach/control/lesson/view?id=313655402&editMode=0
     обновлять сумму после удаления
     загружать список категорий
 
-    
+  вопрос по продвижению сайта
+    <meta name="keywords" content="важные, ключевые, слова">
+    <meta name="description" content="краткое описание">    
