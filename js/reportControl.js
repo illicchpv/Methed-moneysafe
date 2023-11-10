@@ -1,6 +1,7 @@
 import { OverlayScrollbars } from './overlayscrollbars.esm.min.js';
 import {reformatDate } from './helpers.js'
-import {getData} from './service.js'
+import {delData, getData} from './service.js'
+import { financeControl } from './financeControl.js';
 
 const typesOperation = {
   income: 'доход',
@@ -73,8 +74,16 @@ export const renderReport = (data) => {
 
 export const reportControl = () => {
 
-  reportOperationList.addEventListener('click', ({target}) => {
+  reportOperationList.addEventListener('click', async ({target}) => {
     console.log('DZ target: ', target, target.dataset.id);
+    const buttonDel = target.closest('.report__button_table')
+    if(buttonDel){
+      await delData('finance/'+buttonDel.dataset.id)
+      const repRow = buttonDel.closest('.report__row')
+      repRow.remove()
+      financeControl()
+      // clearChart()
+    }
   })
   
   financeReport.addEventListener('click', async () => {

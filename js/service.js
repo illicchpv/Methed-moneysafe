@@ -35,3 +35,21 @@ export const postData = async (url, data) => {
     throw e
   }
 }
+
+export const delData = async (url) => {
+  try{
+    url = API_URL + url
+    console.log('post url: ', url);
+    const resp = await fetch(url, {
+      method: 'DELETE',
+    })
+    // console.log('resp: ', resp);
+    if(!resp.ok){
+      throw new Error(`delData HTTP error ststus: ${resp.status}`)
+    }
+    return await resp.json()
+  }catch(e){
+    console.error('delData catch(e): ', (e));
+    throw e
+  }
+}
