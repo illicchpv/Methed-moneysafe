@@ -1,8 +1,11 @@
 const API_URL = 'https://methed-moneysafe2.glitch.me/api/'
 
+const DEBUG = false; // true
+
 export const getData = async (url) => {
   try{
     url = API_URL + url
+    url = DEBUG ? url.replaceAll('finance', 'test') : url
     console.log('get url: ', url);
     const resp = await fetch(url)
     // console.log('resp: ', resp);

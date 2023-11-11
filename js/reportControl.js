@@ -2,17 +2,19 @@ import { OverlayScrollbars } from './overlayscrollbars.esm.min.js';
 import {reformatDate } from './helpers.js'
 import {delData, getData} from './service.js'
 import { financeControl } from './financeControl.js';
+import { clearChart, generateChart } from './generateChart.js';
 
 const typesOperation = {
   income: 'доход',
   expenses: 'расход',
 }
+let actualData = []
 
 const financeReport = document.querySelector('.finance__report')
 const report = document.querySelector('.report')
 const reportOperationList = document.querySelector('.report__operation-list')
 const reportDates = document.querySelector('.report__dates')
-
+const generateChartButton = document.querySelector('#generateChartButton')
 
 const osInstance = OverlayScrollbars(report, {});
 
@@ -47,10 +49,11 @@ const openReport = () => {
   });
 
   document.addEventListener('click', closeReport)
-
+  // clearChart()
 }
 
 export const renderReport = (data) => {
+  clearChart()
   reportOperationList.innerHTML = ''
   const reportRows = data.map((el) => {
     const repRow = document.createElement('tr')
@@ -92,6 +95,7 @@ export const reportControl = () => {
 
     reportOperationList.innerHTML = '<tr><td colspan="99" align="center" style="padding: 50px; background-color: lightblue;"><div class="loader-104"></div></td></tr>'
     const data = await getData('finance') // finance test
+    actualData = data
     
     reportOperationList.textContent = ''
     reportOperationList.append(...renderReport(data))
@@ -115,10 +119,13 @@ export const reportControl = () => {
   
     reportOperationList.innerHTML = '<tr><td colspan="99" align="center" style="padding: 50px; background-color: lightblue;"><div class="loader-104"></div></td></tr>'
     const data = await getData(url) // finance
+    actualData = data
     
     reportOperationList.textContent = ''
     reportOperationList.append(...renderReport(data))
   })
-  
-  
 }
+
+generateChartButton.addEventListener('click', (e) => {
+  generateChart(actualData)
+})

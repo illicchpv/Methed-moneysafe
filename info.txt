@@ -68,9 +68,15 @@ https://my.methed.ru/pl/teach/control/lesson/view?id=313655402&editMode=0
 День 4
 Строим график     https://my.methed.ru/pl/teach/control/lesson/view?id=313655408&editMode=0
 
+  https://www.chartjs.org/
+  
   вопросы:
     про animationNumber
       в варианте с setInterval мы указывали интервал показа новых значений frameDuration
       а в варианте с animate frameDuration совсем не используется. 
       это значит что смена цифр будет с максимально возможной скоростью и мы это не регулируем?
     
+
+  трансляция
+    публикайия gitHub проектов - https://vercel.com/    
+
